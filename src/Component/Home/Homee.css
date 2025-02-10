@@ -1,0 +1,257 @@
+:root {
+    --primarycolor: hsl(199, 100%, 33%);
+    --secondarycolor: hsl(187, 85%, 43%);
+    --gradientcolor: linear-gradient(to right, hsl(187, 85%, 43%), hsl(199, 100%, 33%));
+    --whitecolor: hsl(0, 0%, 100%);
+    --blackcolor: hsl(201, 33%, 16%);
+    --textcolor: hsl(240, 4%, 36%);
+    --whitecolorDeam: hsl(0, 0%, 93%);
+    --greyText: rgb(190, 190, 190);
+    --inputcolor: rgb(239, 239, 239);
+    --bodycolor: rgb(240, 240, 246);
+    --cardBG: rgb(225, 225, 235);
+}
+
+.home {
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+
+    .overlay {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background: rgba(141, 208, 233, 0.329);
+        top: 0;
+        bottom: 0;
+        z-index: 1;
+        mix-blend-mode: hard-light;
+    }
+
+    video {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        object-fit: cover;
+
+    }
+
+    .homecontent {
+        width: 100%;
+        height: max-content;
+        padding: 8rem 1.5rem;
+        display: flex;
+        row-gap: 3rem;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+        margin: auto;
+        color: var(--whitecolor);
+        z-index: 1000;
+
+        .text-div {
+            padding: 2rem 0;
+
+            .small-text {
+                font-size: 13px;
+                text-transform: uppercase;
+                font-style: italic;
+            }
+
+            .home-tittle {
+                position: relative;
+                font-size: 1.5rem;
+                text-transform: capitalize;
+                font-style: italic;
+            }
+        }
+
+        .card-div {
+            position: relative;
+            padding: 2rem 1rem;
+            background: var(--whitecolor);
+            border-radius: 10px;
+            gap: 1rem;
+
+            label {
+                display: block;
+                color: var(--textcolor);
+                padding-bottom: 10px;
+                font-size: 13px;
+                font-weight: 500;
+            }
+
+            .label-total {
+                justify-content: space-between;
+                align-items: center;
+
+                .total {
+                    color: var(--textcolor);
+                    font-size: 15px;
+                    padding-bottom: 10px;
+                    margin-right: 10px;
+                }
+            }
+
+            .input {
+                height: 40px;
+                padding: 0 1rem;
+                background: var(--inputcolor);
+                border-radius: 3rem;
+
+                input {
+                    background: none;
+                    border: none;
+                    outline: none;
+                    width: 100%;
+                    font-size: 13px;
+                    font-weight: 500;
+
+                    &::placeholder {
+                        font-size: 13px;
+                    }
+                }
+
+                .icon {
+                    font-size: 18px;
+                    color: var(--primarycolor) !important;
+                    margin-left: 10px;
+                }
+
+                .input[type=range] {
+                    background: blue;
+                }
+            }
+
+            .search-option {
+                position: absolute;
+                background: var(--gradientcolor);
+                width: max-content;
+                bottom: -0.7rem;
+                column-gap: .8rem;
+                padding: 5px 1rem;
+                border-radius: 3rem;
+                left: 50%;
+                transform: translate(-50%);
+                justify-content: center;
+                cursor: pointer;
+
+                &:hover {
+                    background: var(--primarycolor);
+                }
+
+                .icon {
+                    font-size: 18px;
+                }
+
+                span {
+                    font-size: 13px
+                }
+
+                ;
+            }
+        }
+
+        .homefooter-icon {
+            width: 100%;
+            justify-content: space-between;
+
+            .icon {
+                font-size: 20px;
+                margin: 0 5px;
+                color: var(--whitecolor);
+                font-weight: 600;
+
+                &:hover {
+                    color: var(--primarycolor);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width:500px) {
+    .home{
+        .homecontent{
+            .text-div{
+                .small-text{
+                    font-size: 16px;
+                }
+                .home-tittle{
+                    position: relative;
+                    font-size: 2rem;
+                    width: max-content;
+                    text-shadow: 0px 0px 1px black;
+
+                    &::after{
+                        position: absolute;
+                        content: '';
+                        background: var(--secondarycolor);
+                        height: 5px;
+                        width: 145px;
+                        right: 0;
+                        bottom: 5px;
+                        z-index: -1;
+                    }
+
+                }
+            }
+            .card-div{
+                grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+    }
+}
+
+@media (min-width:660px) {
+    .home{
+        .homecontent{
+            .card-div{
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3,1fr);
+            }
+        }
+    }
+}
+
+@media (min-width:940px) {
+    .home{
+        height: 85vh;
+    }
+}
+
+@media (min-width:1240px) {
+    .home{
+        height: 95vh;
+
+        .homecontent{
+            padding-left:0 ;
+            padding-right: 0;
+
+            .card-div{
+                padding: 2rem 1rem;
+                grid-template-columns: repeat(3,1fr);
+
+                .input{
+                    margin-bottom: 1rem;
+                }
+
+                .search-option{
+                    bottom: -1rem;
+                    padding: 8px 1rem;
+
+                    span{
+                        font-size: 17px;
+                    }
+                }
+            }
+
+        }
+    }
+}
