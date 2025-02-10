@@ -52,7 +52,7 @@
         justify-content: center;
         margin: auto;
         color: var(--whitecolor);
-        z-index: 1000;
+        z-index: 1;
 
         .text-div {
             padding: 2rem 0;
