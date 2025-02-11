@@ -105,7 +105,6 @@
                    
                     .grade{
                         color: var(--textcolor);
-                        /* max */
                         max-width: 100px;  
                         line-height: 20px;
                         display: flex;

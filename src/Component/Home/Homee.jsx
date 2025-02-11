@@ -72,8 +72,8 @@ export default function Homee() {
               <FiFacebook className='icon' />
               <AiOutlineInstagram className='icon' />
               <SiTripadvisor className='icon' />
-
             </div>
+            
             <div className="left-icon">
               <BsList className='icon' />
               <TbApps className='icon' />
